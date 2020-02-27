@@ -1,20 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<title>Retrieve Grade</title>
+		<title>Nerd Luv</title>
+		<meta charset="UTF-8">
+		<link href="styles/signup.css" type="text/css" rel="stylesheet"/>
 	</head>
 	<body>
-		<form action="http://mumstudents.org/params.php">
-			<h1>Retrieve your grade</h1>
-			Name: <input type="text" name="name"/> <br>
-			Student ID: <input type="text" name="studentId"/> <br>
-			<label><input type="radio" name="entry" value="feb"/> February entry</label>
-			<label><input type="radio" name="entry" value="may"/> May entry</label>
-			<label><input type="radio" name="entry" value="aug"/> August entry</label>
-			<label><input type="radio" name="entry" value="nov"/> November entry</label> <br>
+		<form>
+			<span id=logo-left>nerd</span><span id="logo-right">Luv&trade;</span>
+			<p id="logo-small">where meek geeks meet</p>
+			<fieldset>
+				<legend>New user signup:</legend>
+				<div class="left-label">
+					<label>Name:</label>
+				</div>
+				<div class="right-input">
+					<input type="text" name="name">
+				</div>
+				<div class="left-label">
+					<label>Gender:</label>
+				</div>
+				<div class="right-input">
+					<label><input type="radio" name="gender" value="male" checked="checked"> Male</label>
+					<label><input type="radio" name="gender" value="femle"> Female</label>
+				</div>
+				<div class="left-label">
+					<label>Age:</label>
+				</div>
+				<div class="right-input">
+					<input type="text" name="age" size="3" maxlength="3">
+				</div>
+				<div class="left-label">
+					<label>Personality type:</label>
+				</div>
+				<div class="right-input">
+					<input type="text" name="personality" size="4" maxlength="4">
+					<label>(<a href="http://www.humanmetrics.com/cgi-win/jtypes2.asp">Don't know your type?</a>)</label>
+				</div>
+				<div class="left-label">
+					<label>Favorite OS:</label>
+				</div>
+				<div class="right-input">
+					<select name="favorite_os">
+						<option>Windows</option>
+						<option>Mac OS</option>
+						<option>Linux</option>
+					</select>
+				</div>
+				<div class="left-label">
+					<label>Seeking age:</label>
+				</div>
+				<div class="right-input">
+					<input type="text" name="minage" size="3" placeholder="min" maxlength="3"> -
+					<input type="text" name="maxage" size="3" placeholder="max" maxlength="3">
+				</div>
+				<div class="left-label">
+					<button type="submit">Sign Up</button>
+				</div>
+			</fieldset>
 
-			<label><input type="checkbox" name="accept">I am not lying and really i am only looking up my own grade</label> <br>
-			<button type="submit">Get Grade!</button>
+
+			<p id="bottom">This page is for single nerds to meet and date each other! Type in your personal information and wait for the nerdly luv to begin! <br>Thank you for using our site.</p>
+			<p>
+				Results and page &copy; Copyright NerdLuv Inc.
+			</p>
+
+			<img id="back-img" src="resources/images/Homework4/back.png"><a href="index.html">Back to front page</a>
 		</form>
+		<footer>
+			<a href="https://validator.w3.org/check?uri=https://ochiroo13.github.io"> <img
+				src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png"
+			alt="html validator"/></a>
+		</footer>
 	</body>
 </html>

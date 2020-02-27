@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Retrieve Grade</title>
+	</head>
+	<body>
+		<form action="http://mumstudents.org/params.php">
+			<h1>Retrieve your grade</h1>
+			Name: <input type="text" name="name"/> <br>
+			Student ID: <input type="text" name="studentId"/> <br>
+			<label><input type="radio" name="entry" value="feb"/> February entry</label>
+			<label><input type="radio" name="entry" value="may"/> May entry</label>
+			<label><input type="radio" name="entry" value="aug"/> August entry</label>
+			<label><input type="radio" name="entry" value="nov"/> November entry</label> <br>
+
+			<label><input type="checkbox" name="accept">I am not lying and really i am only looking up my own grade</label> <br>
+			<button type="submit">Get Grade!</button>
+		</form>
+	</body>
+</html>

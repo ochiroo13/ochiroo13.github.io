@@ -1,0 +1,70 @@
+form {
+	width: 600px;
+	height: 550px;
+}
+
+legend, fieldset {
+	border: 1px solid gray;
+	box-shadow: 1px 1px gray;
+}
+
+legend {
+	background-color: #FFFFFF;
+}
+
+fieldset {
+	background-color: #E0E1FF;
+	border-radius: 10px;
+}
+
+.left-label {
+	width: 30%;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: inline-block;
+	font-weight: bold;
+}
+
+.right-input {
+	width: 60%;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: inline-block;
+}
+
+button {
+	border: 1px solid gray;
+	box-shadow: 1px 1px gray;
+	background-color: #E69693;
+	font-weight: bold;
+}
+
+#logo-left, #logo-right {
+	font-size: 30pt;
+	font-weight: bold;
+}
+
+#logo-left {
+	color: #818181;
+}
+
+#logo-right {
+	color: 	#4041FB;
+}
+
+#logo-small {
+	margin-top: 0px;
+}
+
+a {
+	color: #F38392;
+}
+
+#back-img {
+	width: 40px;
+	height: 40px;
+}
