@@ -1,6 +1,5 @@
 h1, h2 {
 	color: #A4A400;
-	background-color: #F0F0F0;
 	font-family: "Lucida Sand Unicode", Helvetica, Arial, sans-serif;
 	letter-spacing: 10px;
 	text-decoration: underline;
@@ -41,4 +40,9 @@ ul {
 
 a:link, a:active, a:visited {
 	color: #A4A400;
+}
+
+h1 > a, h2 > a {
+
+	background-color: #F0F0F0;
 }
