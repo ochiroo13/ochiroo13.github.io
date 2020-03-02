@@ -5,6 +5,11 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 		<link href="styles/index.css" type="text/css" rel="stylesheet"/>
+		<style type="text/css">
+			.single-row {
+				margin-left: 10px;
+			}
+		</style>
 	</head>
 	<body>
 		<header>
@@ -14,80 +19,98 @@
 			<img id ="profile" src="https://lh3.googleusercontent.com/-w_Q3P2Z1X7E/TkSTCnD15YI/AAAAAAAACQk/hil44kBNyncY1SDi5iWgzPoKFteXqT2mACEwYBhgL/w140-h139-p/profile.jpg" alt="Ochiroo"/>
 		</div>
 		<div class="row">
-			<div class="col-md-9">
+			<div class="col-md-9 single-row">
 				<h1>State Management Quiz</h1>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-9 single-row">
 				<h3>1. Can post requests be bookmarked? What are the problems?</h3>
 			</div>
-			<div class="col-md-9">
-				<p>blah blah blah</p>
+			<div class="col-md-9 single-row">
+				<p>No, Only get request can be bookmarked. The problem is we can't send post parameters</p>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-9 single-row">
 				<h3>2. What is the purpose of request dispatching?</h3>
 			</div>
-			<div class="col-md-9">
-				<p>blah blah blah</p>
+			<div class="col-md-9 single-row">
+				<p>Defines an object that receives requests from the clientand sends them to any resource (such as a servlet,HTML file, or JSP file) on the server. The servletcontainer creates the RequestDispatcher object,which is used as a wrapper around a server resource locatedat a particular path or given by a particular name. </p>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-9 single-row">
 				<h3>3. What is the difference between redirect and request dispatch?</h3>
 			</div>
-			<div class="col-md-9">
-				<p>blah blah blah</p>
+			<div class="col-md-9 single-row">
+				<p>Redirect is sends a temporary redirect response to the client</p>
+				<p>Request dispatch sends to anyresource</p>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-9 single-row">
 				<h3>4. What is an attribute ?</h3>
 			</div>
-			<div class="col-md-9">
-				<p>blah blah blah</p>
+			<div class="col-md-9 single-row">
+				<p>An object bound into one of the three servlet API objects: </p>
+				<ul>
+					<li>HttpServletRequest</li>
+					<li>HttpSession</li>
+					<li>ServletContext</li>
+				</ul>
+
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-9 single-row">
 				<h3>5. What is the difference between attributes and parameters?</h3>
 			</div>
-			<div class="col-md-9">
-				<p>blah blah blah</p>
+			<div class="col-md-9 single-row">
+				<p>Parameters are from client side. Attributes are for server-side usage only.</p>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-9 single-row">
 				<h3>6. What are dangers of using attributes?</h3>
 			</div>
-			<div class="col-md-9">
-				<p>blah blah blah</p>
+			<div class="col-md-9 single-row">
+				<p>Context scope attributes are like nuclear weapon. BEcause it's shared by every servlet and every request in application</p>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-9 single-row">
 				<h3>7. What does it mean to say that http is stateless? Give an example of a stateful protocol.</h3>
 			</div>
-			<div class="col-md-9">
-				<p>blah blah blah</p>
+			<div class="col-md-9 single-row">
+				<p>Http is stateless. It means that after a web server responds to a request, there is no information of the request or who sent it. FTP (File Transfer Protocol) and Telnet are stateful protocol.</p>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-9 single-row">
 				<h3>8. Give 5 different methods for maintaining state information (count each attribute scope as one method).</h3>
 			</div>
-			<div class="col-md-9">
-				<p>blah blah blah</p>
+			<div class="col-md-9 single-row">
+				<ol>
+					<li>request scope: destroyed when servlet finishes processing request</li>
+					<li>session scope: destroyed when user closes browser</li>
+					<li>application scope destroyed when Container stopped.</li>
+					<li>Cookies saved on browser: response.addCookie</li>
+					<li>hidden fields on form: input type=&quot;hidden&quot; name=&quot;hiddenState&quot;</li>
+				</ol>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-9 single-row">
 				<h3>9. How long does a session last?</h3>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-9 single-row">
 				<p>blah blah blah</p>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-9 single-row">
 				<h3>10. What is a cookie, and how long does a cookie last?</h3>
 			</div>
-			<div class="col-md-9">
-				<p>blah blah blah</p>
+			<div class="col-md-9 single-row">
+				<p>3 ways for container to remove sessions</p>
+				<ol>
+					<li>session timeout in the DD</li>
+					<li>session.setMaxInactiveInterval(20*60); //seconds</li>
+					<li>session.invalidate(); //immediate</li>
+				</ol>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-9 single-row">
 				<h3>11. What is the purpose of URL rewriting?</h3>
 			</div>
-			<div class="col-md-9">
-				<p>blah blah blah</p>
+			<div class="col-md-9 single-row">
+				<p>If your browser does not support cookies, URL rewriting provides you with another session tracking alternative. URL rewriting is a method in which the requested URL is modified to include a session ID.</p>
 			</div>
-			<div class="col-md-9">
+			<div class="col-md-9 single-row">
 				<h3>12. Why does the request attribute report ‘null’ for the maintaining state demo?</h3>
 			</div>
-			<div class="col-md-9">
-				<p>blah blah blah</p>
+			<div class="col-md-9 single-row">
+				<p>Only request attributes are thread-safe</p>
 			</div>
 		</div>
 		<footer>
