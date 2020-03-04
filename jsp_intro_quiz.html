@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Ochirsuren S</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link href="styles/index.css" type="text/css" rel="stylesheet"/>
+		<style type="text/css">
+			.single-row {
+				margin-left: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Ochirsuren Surakhbayar</h1>
+		</header>
+		<div class="sub-header">
+			<img id ="profile" src="https://lh3.googleusercontent.com/-w_Q3P2Z1X7E/TkSTCnD15YI/AAAAAAAACQk/hil44kBNyncY1SDi5iWgzPoKFteXqT2mACEwYBhgL/w140-h139-p/profile.jpg" alt="Ochiroo"/>
+		</div>
+		<div class="row">
+			<div class="col-md-9 single-row">
+				<h1>JSP Introduction Quiz</h1>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>1. What is the main value of Java Server Pages?</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<p>In Servlet we need to write HTML elements into out.print() that's not easy to code. Luckily in JSP we can easily write java code and htmls.</p>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>2. How are JSP pages related to servlets?</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<p>JSP is very similiar with servlet. One difference is JSP pages converts itself to servlets</p>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>3. How are JSP pages related to HTML?</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<p>JSP pages based on HTML</p>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>4. Give an example of a JSP scriptlet and show how it will look in the JSP servlet .</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<p><% count = count * 10; %></p>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>5. Give an example of a JSP declaration and show how it will look in the JSP servlet</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<p><%! int count = 0; %></p>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>6. Give an example of a JSP comment and show how it will look in the JSP servlet.</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<p><%-- this is jsp comment --%></p>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>7. Give an example of a JSP expression and show how it will look in the JSP servlet.</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<p><%= count %></p>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>8. Give an example of a JSP directive and show how it will look in the JSP servlet.</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<p><%@ taglib prefix='c' uri='http://java.sun.com/jsp/jstl/core'%></p>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>9. Explain how an EL expression is evaluated.</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<p>${result}</p>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>10. Explain how servlet attributes are involved in EL expressions.</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<p>EL simplifies JSP expression syntax we can use ${person.dog.name} instead of doing <%= ((Person) request.getAttribute(“person”)).getDog().getName() %></p>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>11. Explain how servlets and JSPs use request dispatch to interact.</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<p>Servlet uses dispatch to interact with JSP pages</p>
+			</div>
+		</div>
+		<footer>
+			<a href="https://validator.w3.org/check?uri=https://ochiroo13.github.io"> <img
+				src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png"
+			alt="html validator"/></a>
+		</footer>
+	</body>
+</html>

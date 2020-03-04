@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Ochirsuren S</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link href="styles/index.css" type="text/css" rel="stylesheet"/>
+		<style type="text/css">
+			.single-row {
+				margin-left: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Ochirsuren Surakhbayar</h1>
+		</header>
+		<div class="sub-header">
+			<img id ="profile" src="https://lh3.googleusercontent.com/-w_Q3P2Z1X7E/TkSTCnD15YI/AAAAAAAACQk/hil44kBNyncY1SDi5iWgzPoKFteXqT2mACEwYBhgL/w140-h139-p/profile.jpg" alt="Ochiroo"/>
+		</div>
+		<div class="row">
+			<div class="col-md-9 single-row">
+				<h1>JSP Custom Tags Quiz</h1>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>1. Rewrite the JSP page in the first demo (forEach) to use scripting instead of the JSTL forEach.</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<p><%for (elem : ${students}) {%> my html element</p>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>2. How do custom tags relate to JSTL?</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<p>The JSTL library provides 5 kinds of tags, each having a different prefix. </p>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>3. What is the role of the URI in the TLD and the taglib directive?</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<p>In .tld file we import library using <b>URI</b></p>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>4. What is a tag handler class?</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<p>Tag handler class extends the tag support framework class</p>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>5. What is the role of attribute setters in a tag handler class?</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<p>To accept an attribute value, a custom tag class needs to implement the setter methods</p>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>6. What is the role of the doTag() method in a tag handler class?</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<p>Called by the container to invoke this tag. The implementation of this method is provided by the tag librarydeveloper, and handles all tag processing, body iteration, etc.</p>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>7. What does the operation getJspContext().getOut().write(“Hi Bob”) do when called in a doTag() method?</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<p></p>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>8. What does the operation getJspBody().invoke(null) do when called in a doTag() method?</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<p></p>
+			</div>
+		</div>
+		<footer>
+			<a href="https://validator.w3.org/check?uri=https://ochiroo13.github.io"> <img
+				src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png"
+			alt="html validator"/></a>
+		</footer>
+	</body>
+</html>
