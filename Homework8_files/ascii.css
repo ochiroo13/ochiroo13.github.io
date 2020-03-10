@@ -1,0 +1,30 @@
+body {
+	background-color: #CCCCFF;
+	font-family: sans-serif;
+	font-size: 14pt;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 32pt;
+}
+
+.row {
+    margin: 10px;
+    text-align: center;
+}
+
+#textarea {
+    width: 90%;
+}
+
+fieldset {
+    display: inline-block;
+    border: 5px solid black;
+}
+
+button, select {
+	font-family: sans-serif;
+	font-size: 14pt;
+	font-weight: bold;
+}

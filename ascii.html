@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Ochirsuren S</title>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="Homework8_files/ascii.css">
+		<script type="text/javascript" src="Homework8_files/ascii.js"></script>
+		<script type="text/javascript" src="Homework8_files/animations.js"></script>
+	</head>
+	<body>
+		<div class="row">
+		<h1>CSE 190 M ASCII Animation Viewer</h1>	
+		</div>
+		<div class="row">
+			<textarea rows="20" id="textarea" ></textarea>
+		</div>
+		<div class="row">
+			<fieldset>
+				<legend>Play Controls:</legend>
+				<button id="btnStart" onclick="start()">Start</button>
+				<button id="btnStop" onclick="stop()" disabled="true">Stop</button>
+			</fieldset>
+			<fieldset>
+				<legend>Animation:</legend>
+				<select id="animation" onchange="changeAnimation()">
+					<option value="">Blank</option>
+					<option value="exercise">Exercise</option>
+					<option value="juggler">Juggler</option>
+					<option value="bike">Bike</option>
+					<option value="dive">Dive</option>
+					<option value="custom">Custom</option>
+				</select>
+			</fieldset>
+			<fieldset>
+				<legend>Size:</legend>
+				<select id="size" onchange="changeSize()">
+					<option value="tiny">Tiny</option>
+					<option value="small">Small</option>
+					<option value="medium">Medium</option>
+					<option value="large">Large</option>
+					<option value="extra_large">Extra Large</option>
+					<option value="xxl">XXL</option>
+				</select>
+			</fieldset>
+			<fieldset>
+				<legend>Speed:</legend>
+				<label><input type="checkbox" id="turbo" onchange="changeTurbo()">Turbo</label>
+			</fieldset>
+		</div>
+		<footer>
+			<a href="https://validator.w3.org/check?uri=https://ochiroo13.github.io"> <img
+				src="http://mumstudents.org/cs472/2014-09/images/w3c-html.png"
+			alt="html validator"/></a>
+		</footer>
+	</body>
+</html>
