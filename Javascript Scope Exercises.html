@@ -9,6 +9,12 @@
 			.single-row {
 				margin-left: 10px;
 			}
+			pre code {
+			  background-color: #eee;
+			  border: 1px solid #999;
+			  display: block;
+			  padding: 20px;
+			}
 		</style>
 	</head>
 	<body>
@@ -24,69 +30,156 @@
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>1. Determine what this Javascript code will print out (without running it):</h3>
+				<pre>
+x = 1;
+var a = 5;
+var b = 10;
+var c = function(a, b, c) {
+	var x = 10;
+	document.write(x);
+	document.write(a);
+	var f = function(a, b, c) {
+		b = a;
+		document.write(b);
+		b = c;
+		var x = 5;
+	}
+	f(a,b,c);
+	document.write(b);
+}
+c(8,9,10);
+document.write(b);
+document.write(x);
+				</pre>
+
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<hr>
+			</div>
+			<div class="col-md-9 single-row">
+				<p>It'll print <b>10 8 8 9 10 1</b></p>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>2. What is the difference between a method and function?</h3>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<hr>
+			</div>
+			<div class="col-md-9 single-row">
+				<p>In JavaScript every function is an object. An object is a collection of key:value pairs. If a value is a primitive (number, string, boolean), or another object, the value is considered a property. If a value is a function, it is called a 'method'.</p>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>3. What does 'this' refer to when used in a Java method?</h3>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<hr>
+			</div>
+			<div class="col-md-9 single-row">
+				<p>this is a keyword in Java. It can be used inside the method or constructor of a class. It(this) works as a reference to the current object, whose method or constructor is being invoked. This keyword can be used to refer to any member of the current object from within an instance method or a constructor.</p>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>4. What does 'this' refer to when used in a JavaScript method?</h3>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<hr>
+			</div>
+			<div class="col-md-9 single-row">
+				<p>this keyword refers to an object, that object which is executing the current bit of javascript code.</p>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>5. What does 'this' refer to when used in a JavaScript constructor function?</h3>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<hr>
+			</div>
+			<div class="col-md-9 single-row">
+				<p>this refers to instance object itself</p>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>6. Assume object x is the prototype for object y in Javascript. Object x has a method f( ) containing keyword 'this'. When f is called by x.f( ), what does 'this' refer to?</h3>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<hr>
+			</div>
+			<div class="col-md-9 single-row">
+				<p>this refers to instance of x</p>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>7. What is a free variable in JavaScript?</h3>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<hr>
+			</div>
+			<div class="col-md-9 single-row">
+				<p>Free variable refers to variables used in a function that are not local variables nor parameters of that function</p>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>8. Create an object that has properties with name = "fred" and major="music" and a property that is a function that takes 2 numbers and returns the smallest of the two, or the square of the two if they are equal</h3>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
-			</div>
-			<div class="col-md-9 single-row">
-				<h3>Write Javascript code for creating three Employee objects using the "new" keyword and a constructor function. Employee objects have the following fields: name, salary, position.</h3>
+				<hr>
 			</div>
 			<div class="col-md-9 single-row">
 				<p></p>
+			</div>
+			<div class="col-md-9 single-row">
+				<h3>9. Write Javascript code for creating three Employee objects using the "new" keyword and a constructor function. Employee objects have the following fields: name, salary, position.</h3>
+			</div>
+			<div class="col-md-9 single-row">
+				<hr>
+			</div>
+			<div class="col-md-9 single-row">
+				<pre>
+var obj = {
+  name: "fred",
+  major: "music",
+  methodMin: function(num1, num2) {
+    if (num1 == num2) {
+      return num1*num2;
+    }
+    else if (num1 > num2) {
+      return num2;
+    }
+    else {
+      return num1;
+    }
+  }
+}
+				</pre>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>10. Write a Javascript function that takes any number of input arguments and returns the product of the arguments.</h3>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<hr>
+			</div>
+			<div class="col-md-9 single-row">
+				<pre>
+function myFunc(...params) {
+  return params.length;
+}
+				</pre>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>11. Write an arrow function that returns the maximum of its three input arguments.</h3>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<hr>
+			</div>
+			<div class="col-md-9 single-row">
+				<pre>
+maxNum = ((n1, n2, n3) => {
+  let max = n1;
+  if (n2 > max) {
+    max = n2;
+  }
+  if (n3 > max) {
+    max = n3;
+  }
+  return max;
+}
+);
+				</pre>
 			</div>
 		</div>
 		<footer>
