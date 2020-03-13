@@ -6,8 +6,6 @@ document.getElementsByTagName('head')[0].appendChild(script);
 var noMistake = true;
 
 $(document).ready(function() {
-	console.log("ready function!");
-
 	$(".boundary").mouseover(function() {
 		console.log("hehe");
 		noMistake = false;

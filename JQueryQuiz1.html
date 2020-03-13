@@ -29,7 +29,7 @@
 				<hr>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<p>The dollar sign with the parentheses is the shorter name of the jQuery function. This shortcut saves us from writing “jQuery()” every time we want to call the jQuery function. The jQuery function is also often referred to as the jQuery wrapper.</p>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>2. Write jQuery code to find all h1 elements that are children of a div element and make their background color red.</h3>
@@ -48,7 +48,11 @@
 				<hr>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<pre>
+$(document).ready(function() {
+	$("div h1").css('background-color', 'red');
+});
+				</pre>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>3. Use a jQuery method to insert the text "YES!" at the end of the <p> element.</h3>
@@ -70,7 +74,11 @@
 				<hr>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<pre>
+$(document).ready(function() {
+	$("body").append("&lt;p&gt;Yes&lt;/p&gt;");
+});
+				</pre>
 			</div>
 		</div>
 		<footer>
