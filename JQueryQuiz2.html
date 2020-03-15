@@ -40,7 +40,7 @@ $("li").each(function(idx) {
 				<hr>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<p>All 3 code are equivalent because in this case e equals this. Also idx is not used</p>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>2. Write a jQuery expression to find all divs on a page that include an unordered list in them, and make their text color be blue.</h3>
@@ -65,6 +65,7 @@ $("li").each(function(idx) {
 			</div>
 			<div class="col-md-9 single-row">
 				<pre>
+$(&quot;div&quot;).has( &quot;ul&quot; ).css(&quot;color&quot;, &quot;blue&quot;);
 				</pre>
 			</div>
 			<div class="col-md-9 single-row">
@@ -89,7 +90,10 @@ $("li").each(function(idx) {
 			</div>
 			<div class="col-md-9 single-row">
 				<pre>
-
+$(function() {
+	var div= "&lt;div&gt;&lt;h1&gt;JQuery Core&lt;/h1&gt;&lt;/div&gt;";
+	$("body").append(div);
+});
 				</pre>
 			</div>
 		</div>

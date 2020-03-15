@@ -171,7 +171,7 @@ var Module = (function() {
 				<hr>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<p>Counter is a free variable in function closure. If the variable is not a parameter, it's a free variable inside function closure.</p>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>8. The add() function defined in question 6 always adds 1 to the counter each time it is called. Write a definition of a function make_adder(inc), whose return value is an add function with increment value inc (instead of 1). Here is an example of using this function:</h3>
@@ -186,7 +186,36 @@ add7(); add7(); add7(); // final counter value is 21
 				<hr>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<pre>
+add5 = make_adder(5);
+add5( ); add5( ); add5( ); // final counter value is 15
+add7 = make_adder(7);
+add7( ); add7( ); add7( ); // final counter value is 21
+
+var make_adder = (function(){
+  var sum = 0;
+  var increment = 0;
+  var add = function () {
+    return sum += increment;
+   }
+  function init(inc){
+    sum = 0;
+    increment = inc;
+    return add;
+  }
+  return init;
+})();
+
+add5 = make_adder(5);
+console.log("add5 - " + add5());
+console.log("add5 - " + add5());
+console.log("add5 - " + add5());
+
+add7 = make_adder(7);
+console.log("add7 - " + add7());
+console.log("add7 - " + add7());
+console.log("add7 - " + add7());
+				</pre>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>9. Suppose you are given a file of Javascript code containing a list of many function and variable declarations. All of these function and variable names will be added to the Global Javascript namespace. What simple modification to the Javascript file can remove all the names from the Global namespace?</h3>
@@ -195,7 +224,7 @@ add7(); add7(); add7(); // final counter value is 21
 				<hr>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<p>(()=>{ //put code here })();</p>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>10. Using the Revealing Module Pattern, write a Javascript definition of a Module that creates an Employee Object with the following fields and methods:</h3>
@@ -217,7 +246,68 @@ Public Method: incrementAge() // uses private getAge()
 				<hr>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<pre>
+var Employee = (function () {
+var name = "";
+var age = 0;
+var salary = 0;
+
+var setAge = function (newAge){
+    age = newAge;
+}
+var setSalary = function (newSalary){
+    salary = newSalary;
+}
+
+var setName = function (newName){
+    name = newName;
+}
+
+var getAge = function (){
+  return age;
+}
+
+var getSalary = function(){
+   return salary;
+}
+
+var getName = function(){
+  return name;
+}
+
+var increaseSalary = function(percentage){
+  var currentSalary = getSalary();
+  setSalary(currentSalary + currentSalary/100*percentage);
+}
+
+var incrementAge = function(){
+  var currentAge = getAge();
+  setAge(currentAge + 1);
+}
+var getInfo = function(){
+  return getName() + ", " + getAge() + ", " + getSalary();
+}
+
+return {
+  setAge: setAge,
+  setSalary: setSalary,
+  setName: setName,
+  increaseSalary: increaseSalary,
+  incrementAge: incrementAge,
+  getInfo: getInfo
+};
+})();
+
+var emp = Employee;
+emp.setAge(18);
+emp.setName("Tom");
+emp.setSalary(100);
+
+emp.incrementAge();
+emp.increaseSalary(10);
+
+console.log(emp.getInfo());
+				</pre>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>11. Rewrite your answer to Question 10 using the Anonymous Object Literal Return Pattern.</h3>
@@ -226,7 +316,67 @@ Public Method: incrementAge() // uses private getAge()
 				<hr>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<pre>
+var Employee = (function () {
+var name = "";
+var age = 0;
+var salary = 0;
+
+var setAge = function (newAge){
+    age = newAge;
+}
+var setSalary = function (newSalary){
+    salary = newSalary;
+}
+
+var setName = function (newName){
+    name = newName;
+}
+
+var getAge = function (){
+  return age;
+}
+
+var getSalary = function(){
+   return salary;
+}
+
+var getName = function(){
+  return name;
+}
+
+var increaseSalary = function(percentage){
+  var currentSalary = getSalary();
+  setSalary(currentSalary + currentSalary/100*percentage);
+}
+
+var incrementAge = function(){
+  var currentAge = getAge();
+  setAge(currentAge + 1);
+}
+var getInfo = function(){
+  return getName() + ", " + getAge() + ", " + getSalary();
+}
+
+return {
+  setAge:  function (newAge) {  setAge(newAge); },
+  setSalary: function (newSalary) {  setSalary(newSalary); } ,
+  setName: function (newName) {  setName(newName); } ,
+  increaseSalary: function (percentage) {  increaseSalary(percentage); },
+  incrementAge: function () { incrementAge(); },
+  getInfo: function () { return getInfo(); } 
+};
+})();
+
+var emp = Employee;
+emp.setAge(18);
+emp.setName("Tom");
+emp.setSalary(100);
+emp.incrementAge();
+emp.increaseSalary(10);
+console.log("Employee: "+emp.getInfo());
+
+				</pre>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>12. Rewrite your answer to Question 10 using the Locally Scoped Object Literal Pattern</h3>
@@ -235,7 +385,68 @@ Public Method: incrementAge() // uses private getAge()
 				<hr>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<pre>
+var Employee = (function () {
+var name = "";
+var age = 0;
+var salary = 0;
+let myObject = {}; 
+
+var setAge = function (newAge){
+    age = newAge;
+}
+var setSalary = function (newSalary){
+    salary = newSalary;
+}
+
+var setName = function (newName){
+    name = newName;
+}
+
+var getAge = function (){
+  return age;
+}
+
+var getSalary = function(){
+   return salary;
+}
+
+var getName = function(){
+  return name;
+}
+
+var increaseSalary = function(percentage){
+  var currentSalary = getSalary();
+  setSalary(currentSalary + currentSalary/100*percentage);
+}
+
+var incrementAge = function(){
+  var currentAge = getAge();
+  setAge(currentAge + 1);
+}
+var getInfo = function(){
+  return getName() + ", " + getAge() + ", " + getSalary();
+}
+
+  myObject.setAge =   function (newAge) {  setAge(newAge); };
+  myObject.setSalary= function (newSalary) {  setSalary(newSalary); };
+  myObject.setName= function (newName) {  setName(newName); };
+  myObject.increaseSalary= function (percentage) {  
+    increaseSalary(percentage); };
+  myObject.incrementAge= function () { incrementAge(); };
+  myObject.getInfo= function () { return getInfo(); };
+
+return myObject;
+})();
+
+var emp = Employee;
+emp.setAge(18);
+emp.setName("Tom");
+emp.setSalary(100);
+emp.incrementAge();
+emp.increaseSalary(10);
+console.log("Employee: "+emp.getInfo());    
+				</pre>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>13. Write a few Javascript instructions to extend the Module of Question 10 to have a public address field and public methods setAddress(newAddress) and getAddress().</h3>
@@ -244,7 +455,19 @@ Public Method: incrementAge() // uses private getAge()
 				<hr>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<pre>
+Employee.address = "";
+Employee.setAddress = function (newAddress) {
+    address = newAddress;
+};
+Employee.getAddress = function () {
+    return address;
+};
+
+var emp = Employee;
+emp.setAddress("New York");
+console.log("Employee: "+emp.getAddress());
+				</pre>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>14. What is the output of the following code?</h3>
@@ -260,7 +483,7 @@ promise.then(val => alert(“Success: “ + val))
 				<hr>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<p>In error block shows &quot;Error: Hattori&quot; alert</p>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>15. What is the output of the following code?</h3>
@@ -277,7 +500,7 @@ promise.then(val => alert(“Success: “ + val))
 				<hr>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<p>In success block shows &quot;Success: Hattori&quot; alert</p>
 			</div>
 			<div class="col-md-9 single-row">
 				<h3>16. What is the output of the following code?</h3>
@@ -306,7 +529,7 @@ promise.then(function(data) {
 				<hr>
 			</div>
 			<div class="col-md-9 single-row">
-				<p></p>
+				<p>It'll print &quot;success error&quot;</p>
 			</div>
 		</div>
 		<footer>
