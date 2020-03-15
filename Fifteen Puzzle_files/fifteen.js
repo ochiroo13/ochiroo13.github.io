@@ -7,6 +7,8 @@ var arr = [
 	[undefined, undefined, undefined, undefined]
 ];
 
+var newGame = false;
+
 var init = function() {
     var puzzleArea = document.getElementById('puzzlearea');
     var divs = puzzleArea.getElementsByTagName("div");
@@ -26,7 +28,7 @@ var init = function() {
         div.id = y + "_" + x;
         div.style.left = x + 'px';
         div.style.top = y + 'px';
-        div.style.backgroundImage = 'url("Fifteen Puzzle_files/background.jpg")';
+        div.style.backgroundImage = 'url("Fifteen Puzzle_files/world.png")';
         div.style.backgroundPosition = -x + 'px ' + (-y) + 'px';
         
         // store x and y for later
@@ -84,7 +86,6 @@ function isMovable(strId) {
 function clickPiece(strId) {
 	let i = parseInt(strId.split("_")[0])/100;
 	let j = parseInt(strId.split("_")[1])/100;
-	let res = false;
 	let elem;
 
 	if (i > 0 && arr[i-1][j] == undefined) {
@@ -117,9 +118,79 @@ function clickPiece(strId) {
 		elem.style.left = (j * 100 + 100) + "px";
         elem.id = (i * 100) + "_" + (j * 100 + 100);
 	}
-	return res;
+
+	if (newGame) {
+		let win = true;
+		let counter = 1;
+		for (let i = 0; i < arr.length; i++) {
+			for (let j = 0; j < arr[i].length; j++) {
+				if (counter < 16 && arr[i][j] != counter) {
+					win = false;
+					break;
+				}
+				counter++;
+			}
+			if (!win)
+				break;
+		}
+
+		if (win) {
+			newGame = false;
+			alert("Congratulations you win");
+		}
+	}
 }
 
 function shuffle() {
-	console.log(Math.random())
+	var counter = 0;
+
+	function myLoop() {
+		setTimeout(function() {
+			var x, y;
+			var posibleMoves = 0;
+			var box = [];
+			var arrElem;
+			var strId;
+			for (let i = 0; i < arr.length; i++) {
+				for (let j = 0; j < arr[i].length; j++) {
+					if (arr[i][j] == undefined) {
+						x = i;
+						y = j;
+					}
+				}
+			}
+			
+			if (x > 0) {
+				box.push([x-1, y]);
+				posibleMoves++;
+			}
+			if (y > 0) {
+				box.push([x, y-1]);
+				posibleMoves++;
+			}
+			if (x < 3) {
+				box.push([x+1, y]);
+				posibleMoves++;
+			}
+			if (y < 3) {
+				box.push([x, y+1]);
+				posibleMoves++;
+			}
+
+			arrElem = box[parseInt(Math.random() * posibleMoves)];
+
+			strId = arrElem[0] * 100 + "_" + arrElem[1] * 100;
+
+			clickPiece(strId);
+
+
+		      counter++;
+		      if (counter < 10) {
+		         myLoop();
+		      }
+		}, 10)
+	}
+
+	myLoop();
+	newGame = true;
 }
